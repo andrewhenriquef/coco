@@ -1,0 +1,18 @@
+<h1> Novo Lugar </h1>
+<%= form_for(seat) do |f| %>
+  <div class="field">
+    <%= f.label :flight_id %><br>
+    <%= f.number_field :flight_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :baggage %><br>
+    <%= f.text_field :baggage %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
