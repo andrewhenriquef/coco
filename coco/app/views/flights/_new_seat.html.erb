@@ -1,9 +1,8 @@
 <h1> Novo Lugar </h1>
 <%= form_for(seat) do |f| %>
-  <div class="field">
-    <%= f.label :flight_id %><br>
-    <%= f.number_field :flight_id %>
-  </div>
+
+<%= f.hidden_field :flight_id %>    
+
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>

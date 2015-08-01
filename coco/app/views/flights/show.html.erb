@@ -25,7 +25,9 @@
   <%= @flight.capacity %>
 </p>
 
-<%= render :partial => 'new_seat', :locals => {:seat => Seat.new}%>
+<%= render :partial => 'seat_list', :locals => {:seats => Seat.all}%>
+<%= render :partial => 'new_seat', :locals => {:seat => Seat.new(:flight_id => @flight.id)}%>
+
 <!--<#%= render :partial => 'new_seat', :locals => Seat.new %>-->
 <!--<#%= render partial: 'new_seat', collection: @flights, locals: {seat: Seat.new} %>-->
 <!--<#%= render 'new_seat', :locals =>{:seat => Seat.new}%>-->
