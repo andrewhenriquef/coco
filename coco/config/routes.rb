@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :seats
   resources :flights
+    
+    get '/flights/:flight_id/seats', :action => 'flight_seats', :controller => 'seats' 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
