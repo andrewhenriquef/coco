@@ -25,7 +25,15 @@
   <%= @flight.capacity %>
 </p>
 
-<%= render :partial => 'seat_list', :locals => {:seats => @flight.seats}%>
+<div id = "seats">
+    
+    <%= render :partial => 'seat_list', :locals => {:seats => @flight.seats}%>    
+
+</div>
+
+<%= link_to "Atualizar lugares", :url => '/flights/#{@flight.id}/seats', remote: true, :method => 'get', :update => 'seats' %>
+<!--<#%= link_to_remote('Atualizar lugares', :url => '/flights/#{@flight.id}/seats', :method => 'get', :update => 'seats') %>-->
+
 <%= render :partial => 'new_seat', :locals => {:seat => Seat.new(:flight_id => @flight.id)}%>
 
 <!--<#%= render :partial => 'new_seat', :locals => Seat.new %>-->
